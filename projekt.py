@@ -31,8 +31,12 @@ def odstranit_ukol(ukoly):
 
     zobrazit_ukoly(ukoly)
 
-    smazat = int(input("Zadejte číslo úkolu, který chcete smazat: "))
-    smazat -= 1
+    try:
+        smazat = int(input("Zadejte číslo úkolu, který chcete smazat: "))
+        smazat -= 1
+    except ValueError:
+        print("Neplatné číslo")
+        return
 
     if 0 <= smazat < len(ukoly):
         odebrany = ukoly[smazat]

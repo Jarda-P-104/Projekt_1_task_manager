@@ -252,9 +252,9 @@ Uklidit – Uklidit pokoj
 5. Zvolte stiskem klávesy 3 – Odstranit úkol 
 6. Na výzvu pro zadání čísla úkolu zadejte text „abc“ a stiskněte klávesu Enter.
 **Očekávaný výsledek:** Program upozorní uživatele na neplatný vstup a umožní pokračovat bez ukončení aplikace.
-**Skutečný výsledek:** Program byl ukončen výjimkou ValueError a nebylo možné pokračovat v práci s aplikací.
-**Stav:** FAIL
-**Poznámky:** Nalezená chyba aplikace. Vstup není ošetřen pomocí try/except
+**Skutečný výsledek:** Program upozornil uživatele na neplatný vstup a pokračoval v hlavním menu.
+**Stav:** PASS
+**Poznámky:** Chyba byla opravena pomocí ošetření vstupu try/except.
 
 ### TC-18 Odstranění posledního úkolu v seznamu
 **Popis:** Ověření správného odstranění posledního úkolu a následného vyprázdnění seznamu.
