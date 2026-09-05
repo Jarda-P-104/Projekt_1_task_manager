@@ -117,9 +117,9 @@
 4. Na výzvu pro zadání názvu zadejte několik mezer a stiskněte klávesu Enter.
 5. Zadejte platný popis úkolu.
 **Očekávaný výsledek:** Program by měl vyhodnotit vstup jako neplatný a požadovat zadání platného názvu.
-**Skutečný výsledek:** Program přijal název obsahující pouze mezery a vytvořil úkol.
-**Stav:** FAIL
-**Poznámky:** Nalezená chyba programu. Podmínka while nazev == "" nekontroluje vstupy složené pouze z mezer. Doporučené řešení je použít nazev.strip() == "".
+**Skutečný výsledek:** Program upozornil na prázdné pole a vyžádal si nový název úkolu.
+**Stav:** PASS
+**Poznámky:** Chyba byla opravena pomocí kontroly nazev.strip() == "".
 
 ## Funkce: zobrazit_ukoly()
 

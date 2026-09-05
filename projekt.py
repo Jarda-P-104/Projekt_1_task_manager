@@ -1,28 +1,26 @@
 ukoly = []
 def pridat_ukol(ukoly):
-        print("\n")
+    print("\n")
+    nazev = input("Zadejte název úkolu: ")
+    while nazev.strip() == "":
+        print("Zadali jste prazdne pole")
         nazev = input("Zadejte název úkolu: ")
-        while nazev == "":
-             print("Zadali jste prazdne pole")
-             nazev = input("Zadejte název úkolu: ")
+    popis = input("Zadejte popis úkolu: ")
+    while popis.strip() == "":
+        print("Zadali jste prazdne pole")
         popis = input("Zadejte popis úkolu: ")
-        while popis == "":
-             print("Zadali jste prazdne pole")
-             popis = input("Zadejte popis úkolu: ")
-        ukoly.append({"nazev": nazev, "popis": popis})
-        print("\n")
-        print("Úkol " + nazev + " byl přidán")
+    ukoly.append({"nazev": nazev, "popis": popis})
+    print("\n")
+    print("Úkol " + nazev + " byl přidán")
 
 def zobrazit_ukoly(ukoly):
-      if not ukoly:
+    if not ukoly:
         print("Nejsou žádné úkoly")
         return
-      print("\n")
-      print("Seznam úkolů: ")
-      index = 1
-      for i in ukoly:
-        print(index,"Název:", i["nazev"], "Popis:", i["popis"])
-        index += 1
+    print("\n")
+    print("Seznam úkolů: ")
+    for index, i in enumerate(ukoly, start=1):
+        print(f"{index} Název: {i['nazev']} Popis: {i['popis']}")
 
 def odstranit_ukol(ukoly):
     if not ukoly:
@@ -46,7 +44,6 @@ def odstranit_ukol(ukoly):
         print("Neplatné číslo")
 
 def hlavni_menu():
-
     while True:
         print("\n")
         print("Správce úkolů - Hlavní menu")
@@ -61,15 +58,15 @@ def hlavni_menu():
         if volba == "1":
             pridat_ukol(ukoly)
         elif volba == "2":
-              zobrazit_ukoly(ukoly)
+            zobrazit_ukoly(ukoly)
         elif volba == "3":
-             odstranit_ukol(ukoly)
+            odstranit_ukol(ukoly)
             
         elif volba == "4":
-                print("Ukončili jste program")
-                break
+            print("Ukončili jste program")
+            break
         else:
-             print("Neplatná hodnota - Zadejte číslo 1-4")
+            print("Neplatná hodnota - Zadejte číslo 1-4")
 
 hlavni_menu()
 
